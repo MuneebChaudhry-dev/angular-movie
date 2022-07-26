@@ -13,8 +13,8 @@
   right: 50px;
 }
 .desc {
-  font-size: 34px;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  font-family: sans-serif;
   letter-spacing: 5px;
   position: absolute;
   top: 200px;
@@ -27,4 +27,33 @@
   left: 50px;
   position: absolute;
   width: 618px;
+}
+.login-form {
+  width: 500px;
+  height: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  box-shadow: 5px 5px 20px;
+}
+.form-group {
+  margin-top: 20px;
+}
+.login-form label {
+  font-weight: bold;
+}
+.login-form .btn-container {
+  position: relative;
+}
+.login-form .btn {
+  margin-top: 30px;
+}
+.error {
+  position: absolute;
+  top: 32px;
+  right: 0px;
+  color: red;
 }
