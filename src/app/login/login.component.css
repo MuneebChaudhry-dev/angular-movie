@@ -1,0 +1,30 @@
+.login-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffe645, #e2aa02 100%);
+}
+.logo {
+  font-size: 70px;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 10px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+.desc {
+  font-size: 34px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 5px;
+  position: absolute;
+  top: 200px;
+  right: 50px;
+  text-align: right;
+  width: 1200px;
+}
+.film {
+  top: 50px;
+  left: 50px;
+  position: absolute;
+  width: 618px;
+}
