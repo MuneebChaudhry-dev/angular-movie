@@ -8,6 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { MovieComponent } from './movie/movie.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RatingComponent } from './feature/rating/rating.component';
+import { FeatureModule } from './feature/feature.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,13 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     MovieComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    FeatureModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
