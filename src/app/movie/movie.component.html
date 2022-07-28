@@ -1,1 +1,106 @@
-<p>movie works!</p>
+<app-header></app-header>
+<div class="movie-container">
+  <div class="top">
+    <div class="left">
+      <div class="name">{{ movie?.name }}</div>
+      <div class="rating">
+        <app-rating [rating]="movie?.rating" [isReadOnly]="true"></app-rating>
+        <span class="rating-value">{{ movie?.rating }}</span>
+      </div>
+      <div class="cover">
+        <img [src]="movie?.cover" alt="" />
+      </div>
+    </div>
+    <div class="right">
+      <div class="title">Rate this Movie</div>
+      <div class="rating-form">
+        <div class="form-group">
+          <label for="uname">Name</label>
+          <input
+            type="text"
+            name="uname"
+            class="form-control"
+            [(ngModel)]="username"
+          />
+        </div>
+        <div class="form-group">
+          <label for="rating">Rating</label>
+          <div class="rating">
+            <app-rating
+              [rating]="reviewRating"
+              [isReadOnly]="false"
+            ></app-rating>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="review">Review</label>
+          <textarea
+            name="review"
+            rows="3"
+            class="form-control"
+            [(ngModel)]="reviewTaken"
+          ></textarea>
+        </div>
+        <div class="btn-container">
+          <button class="btn btn-dark" (click)="setReview()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <h4 class="title">Reviews</h4>
+    <div class="reviews" *ngIf="movie?.reviews?.length > 0">
+      <div class="review" *ngFor="let review of movie?.reviews">
+        <div class="review-details">
+          <div class="review-left">
+            <div class="author">{{ review.author }}</div>
+            <div class="author-dt">
+              {{ review.published_on | date: "dd-MM-YYYY" }}
+            </div>
+          </div>
+          <div class="review-right">
+            <div class="rating">
+              <app-rating
+                [rating]="review.rating"
+                [isReadOnly]="true"
+              ></app-rating>
+              <span class="rating-value">{{ review.rating }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="reviwes"
+      *ngIf="movie?.reviews?.length === 0 && reviews.length === 0"
+    >
+      <div class="no-review">No reviews Yet</div>
+    </div>
+    <div class="reviews">
+      <div class="review" *ngFor="let review of reviews">
+        <div class="review-details">
+          <div class="review-left">
+            <div class="author">
+              {{ review.name }}
+            </div>
+            <div class="author-dt">
+              {{ review.date | date: "dd-MM-YYYY" }}
+            </div>
+            <div class="content">
+              {{ review.content }}
+            </div>
+          </div>
+          <div class="review-right">
+            <div class="rating">
+              <app-rating
+                [rating]="review.rating"
+                [isReadOnly]="true"
+              ></app-rating>
+              <span class="rating-value">{{ review.rating }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -35,6 +35,7 @@
 }
 .movie .cover img {
   border-radius: 5px;
+  cursor: pointer;
 }
 .movie .detail {
   width: 180px;
